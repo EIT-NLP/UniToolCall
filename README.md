@@ -99,8 +99,8 @@ python all_evaluation.py \
 
 | Path | Description |
 |------|-------------|
-| `multi-hop_pipeline/` | Multi-hop trajectory generation, QC, augment, **standardization** |
-| `multi-turn_pipeline/` | Multi-turn generation and **standardization** |
+| `multi-hop_pipeline/` | Multi-hop trajectory generation, QC, augment, standardization |
+| `multi-turn_pipeline/` | Multi-turn generation |
 | `single-hop_pipeline/` | Single-hop data utilities |
 | `test_set/` | Benchmarks |
 | `tool_set/` | Tool corpus |
