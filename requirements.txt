@@ -1,0 +1,19 @@
+# UniToolCall — third-party dependencies used across pipelines and scripts.
+# Install:  pip install -r requirements.txt
+# Then:    pip install -e .
+#
+# Python >=3.9 (see pyproject.toml)
+#
+# Notes:
+# - faiss-cpu: optional for FAISS-accelerated similarity in toollist/cosine_dup; if install fails
+#   (e.g. some ARM Macs), use conda or skip — scripts may fall back to NumPy.
+# - datasets/pyarrow: used by tool_set convert scripts that touch Hugging Face datasets.
+
+requests>=2.28.0
+numpy>=1.24.0,<3
+tqdm>=4.65.0
+certifi>=2023.7.22
+datasets>=2.14.0
+pyarrow>=14.0.0
+ijson>=3.2.0
+faiss-cpu>=1.7.4

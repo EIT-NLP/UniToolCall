@@ -1,0 +1,17 @@
+# Local secrets (prefer env vars; ignore accidental key files)
+*.apikey
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Logs / local outputs
+*.log
+.pytest_cache/

@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "uni-toolcall"
+version = "0.1.0"
+description = "UniToolCall research scripts and pipelines"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "requests>=2.28.0",
+  "numpy>=1.24.0,<3",
+  "tqdm>=4.65.0",
+  "certifi>=2023.7.22",
+  "datasets>=2.14.0",
+  "pyarrow>=14.0.0",
+  "ijson>=3.2.0",
+  "faiss-cpu>=1.7.4",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
