@@ -6,7 +6,7 @@
 
 **语言 / Languages:** [English](README.md) | **简体中文**
 
-## Overview / 概述
+## 🚀概述
 
 工具调用能力使大语言模型智能体能够通过结构化工具调用与外部系统交互。然而，现有研究在交互表示上不一致，对工具使用轨迹的结构分布关注不足，且评测基准互不兼容。本文提出 **UniToolCall**，一个统一工具学习的框架，从工具集构建、数据集生成到评测对全流程进行标准化。
 
@@ -16,7 +16,7 @@
   <img src="images/framework.png" alt="UniToolCall 框架示意图" width="92%" />
 </p>
 
-## Performance / 实验结果
+## 实验结果
 
 在干扰项较多的 **Hybrid-20** 设定下，于本数据上微调的 Qwen3-8B 在工具使用上取得显著提升：UniToolCall 达到 **93.0%** 的单轮 Strict Precision，较 Qwen3-32B 高出 **20.3** 个百分点，验证了框架有效性。下图为评测结果。
 
