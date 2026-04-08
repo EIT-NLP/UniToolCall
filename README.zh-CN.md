@@ -2,9 +2,7 @@
   <img src="images/logo.png" alt="UniToolCall logo" width="240" />
 </p>
 
-# UniToolCall
-
-**UniToolCall: Unifying Tool-Use Representation, Data, and Evaluation for LLM Agents**
+# UniToolCall: Unifying Tool-Use Representation, Data, and Evaluation for LLM Agents
 
 **语言 / Languages:** [English](README.md) | **简体中文**
 
