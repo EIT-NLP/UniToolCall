@@ -16,7 +16,7 @@ The framework curates a tool pool of **22k+** tools and a hybrid training corpus
   <img src="images/framework.png" alt="UniToolCall framework" width="92%" />
 </p>
 
-## Performance
+## 🧠Performance
 
 Experiments show that fine-tuning **Qwen3-8B** on our dataset substantially improves tool-use performance. Under the distractor-heavy **Hybrid-20** setting, UniToolCall achieves **93.0%** single-turn **Strict Precision**, outperforming **Qwen3-32B** by **20.3** points. The figure below summarizes evaluation results.
 
@@ -24,7 +24,7 @@ Experiments show that fine-tuning **Qwen3-8B** on our dataset substantially impr
   <img src="images/performance.png" alt="UniToolCall evaluation results" width="92%" />
 </p>
 
-## Dataset
+## ✨Dataset
 
 Training data has **two parts**: (1) **public-converted** data, and (2) **pipeline-generated** data.
 
@@ -36,18 +36,18 @@ Pipeline-generated datasets in this repository:
 
 `multi-hop_pipeline/data/`, `multi-turn_pipeline/data/`, and `single-hop_pipeline/data/`
 
-## Toolset
+## 🔧Toolset
 
 Tool list used to build training data:
 
 `tool_set/apis/toolset.json`
 
-## Requirements
+## 🌍Requirements
 
 - **Python** `>=3.9` (see [`pyproject.toml`](pyproject.toml)).
 - Third-party packages are listed in [`requirements.txt`](requirements.txt) and mirrored under `[project]` / `dependencies` in [`pyproject.toml`](pyproject.toml).
 
-## Installation
+## 🧪Installation
 
 ```bash
 cd UniToolCall
@@ -55,7 +55,7 @@ pip install -r requirements.txt
 pip install -e .
 ```
 
-## Inference and evaluation
+## 🌟Inference and evaluation
 
 Scripts live under `test_set/scripts/metrics/`. Configure **API keys** via **environment variables** first.
 
@@ -95,7 +95,7 @@ python all_evaluation.py \
 
 **Dataset-construction pipelines** live under `multi-hop_pipeline/scripts/`, `multi-turn_pipeline/scripts/`, and `single-hop_pipeline/scripts/`; run from that directory, e.g. `cd multi-hop_pipeline/scripts && python generate_via_api.py`.
 
-## Repository layout
+## 🎯Repository layout
 
 | Path | Description |
 |------|-------------|
@@ -111,6 +111,6 @@ python all_evaluation.py \
 
 Under `train_set/scripts/` and `test_set/scripts/`, subfolders such as `convert/`, `analysis/`, `metrics/`, and `toollist/` group scripts by role.
 
-## License
+## 👉License
 
 See the [`LICENSE`](LICENSE) file in the repository root (Apache License 2.0).
