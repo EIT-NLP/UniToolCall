@@ -2,15 +2,7 @@
   <img src="images/logo.png" alt="UniToolCall logo" width="240" />
 </p>
 
-<h1 align="center">UniToolCall</h1>
-
-<p align="center">
-  <b>Unifying Tool-Use Representation, Data, and Evaluation for LLM Agents</b>
-</p>
-
-<p align="center">
-  A Unified Framework for Tool Learning & Evaluation
-</p>
+<h1 align="center">UniToolCall: Unifying Tool-Use Representation, Data, and Evaluation for LLM Agents</h1>
 
 **Languages / 语言:** **English** | [简体中文](README.zh-CN.md)
 
