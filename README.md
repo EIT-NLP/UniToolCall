@@ -36,7 +36,7 @@ Pipeline-generated datasets in this repository:
 
 `multi-hop_pipeline/data/`, `multi-turn_pipeline/data/`, and `single-hop_pipeline/data/`
 
-## Tool registry
+## Toolset
 
 Tool list used to build training data:
 
