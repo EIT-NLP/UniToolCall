@@ -4,7 +4,7 @@
 
 # UniToolCall: Unifying Tool-Use Representation, Data, and Evaluation for LLM Agents
 
-**语言 / Languages:** [English](README.md) | **简体中文**
+**语言:** [English](README.md) | **简体中文**
 
 ## 🚀概述
 
