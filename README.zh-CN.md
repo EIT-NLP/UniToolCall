@@ -16,7 +16,7 @@
   <img src="images/framework.png" alt="UniToolCall 框架示意图" width="92%" />
 </p>
 
-## 实验结果
+## 🧠实验结果
 
 在干扰项较多的 **Hybrid-20** 设定下，于本数据上微调的 Qwen3-8B 在工具使用上取得显著提升：UniToolCall 达到 **93.0%** 的单轮 Strict Precision，较 Qwen3-32B 高出 **20.3** 个百分点，验证了框架有效性。下图为评测结果。
 
@@ -24,7 +24,7 @@
   <img src="images/performance.png" alt="UniToolCall 评测结果" width="92%" />
 </p>
 
-## 数据集
+## ✨数据集
 
 训练数据由 **两部分** 组成：(1) **Public转换**，(2) **Pipeline生成**。
 
@@ -36,18 +36,18 @@ Pipeline生成的完整数据集见本仓库：
 
 `multi-hop_pipeline/data/`, `multi-turn_pipeline/data/`和 `single-hop_pipeline/data/`
 
-## 工具集
+## 🔧工具集
 
 构建训练数据集的工具列表见：
 
 `tool_set/apis/toolset.json`
 
-## 环境依赖
+## 🌍环境依赖
 
 - **Python** `>=3.9`（见 [`pyproject.toml`](pyproject.toml)）。
 - 第三方库清单见根目录 [`requirements.txt`](requirements.txt)，并与 [`pyproject.toml`](pyproject.toml) 里 `[project]` / `dependencies` 一致。
 
-## 安装
+## 🧪安装
 
 ```bash
 cd UniToolCall
@@ -55,7 +55,7 @@ pip install -r requirements.txt
 pip install -e .
 ```
 
-## 推理与评估
+## 🌟推理与评估
 
 以下脚本位于 `test_set/scripts/metrics/`。请先配置 **API 密钥**（环境变量）。
 
@@ -95,7 +95,7 @@ python all_evaluation.py \
 
 **数据构建Pipeline**的代码分别在 `multi-hop_pipeline/scripts/`、`multi-turn_pipeline/scripts/`、`single-hop_pipeline/scripts/` 下，请在对应目录执行，例如：`cd multi-hop_pipeline/scripts && python generate_via_api.py`。
 
-## 目录结构
+## 🎯目录结构
 
 | 路径 | 说明 |
 |------|-------------|
@@ -111,6 +111,6 @@ python all_evaluation.py \
 
 `train_set/scripts/` 与 `test_set/scripts/` 下用 `convert/`、`analysis/`、`metrics/`、`toollist/` 等按用途分子目录。
 
-## 许可证
+## 👉许可证
 
 见仓库根目录 [`LICENSE`](LICENSE) 文件（Apache License 2.0）。
