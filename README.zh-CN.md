@@ -99,8 +99,8 @@ python all_evaluation.py \
 
 | 路径 | 说明 |
 |------|-------------|
-| `multi-hop_pipeline/` | 多跳轨迹生成、质检、增强、**标准化** |
-| `multi-turn_pipeline/` | 多轮生成与**标准化** |
+| `multi-hop_pipeline/` | 多跳轨迹生成、质检、增强、标准化 |
+| `multi-turn_pipeline/` | 多轮生成与 |
 | `single-hop_pipeline/` | 单跳数据工具 |
 | `test_set/` | 基准评测 |
 | `tool_set/` | 工具语料 |
