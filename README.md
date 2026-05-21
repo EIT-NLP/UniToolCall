@@ -21,7 +21,7 @@ The framework curates a tool pool of **22k+** tools and a hybrid training corpus
 Experiments show that fine-tuning **Qwen3-8B** on our dataset substantially improves tool-use performance. Under the distractor-heavy **Hybrid-20** setting, UniToolCall achieves **93.0%** single-turn **Strict Precision**, outperforming **Qwen3-32B** by **20.3** points. The figure below summarizes evaluation results.
 
 <p align="center">
-  <img src="images/performance.png" alt="UniToolCall evaluation results" width="92%" />
+  <img src="images/results.png" alt="UniToolCall evaluation results" width="92%" />
 </p>
 
 ## ✨Dataset
