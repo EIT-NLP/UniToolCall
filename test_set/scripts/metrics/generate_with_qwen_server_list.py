@@ -574,9 +574,9 @@ def build_messages_for_function_call(
             # ：function call，observationhistory
             # userobservation（next_obs_idx）history
             # target_call_posobservationhistory
+            # Clear observation content to match training (empty tool responses).
             if next_obs_idx is None or idx != next_obs_idx:
-                obs_value = conv["value"]
-                history_parts.append(f"Tool response: {obs_value}" if obs_value else "Tool response: ")
+                history_parts.append("Tool response: ")
         
         elif conv["from"] == "gpt":
             # answer（LLM，）
@@ -615,15 +615,14 @@ def build_messages_for_function_call(
     
     # tool call，observation（call_idx > 0，observation）
     if call_idx > 0:
-        # call_idx-1function_callobservation
-        prev_obs = None
+        # Detect observation slot after call_idx-1; content always emptied to match training.
+        has_obs_slot = False
         obs_count = 0
         for idx, conv in enumerate(conversations):
             if conv["from"] == "function_call":
                 if obs_count == call_idx - 1:
-                    # observation
                     if idx + 1 < len(conversations) and conversations[idx + 1]["from"] == "observation":
-                        prev_obs = conversations[idx + 1]["value"]
+                        has_obs_slot = True
                     break
                 obs_count += 1
         
@@ -640,11 +639,12 @@ def build_messages_for_function_call(
                     # human，multi-turn，observation
                     break
         
-        # observationprev_obsNone，single-turn multi-hop，OBSERVATION
-        # observation，multi-turn（turnfunction call），USER
-        if has_prev_observation and prev_obs is not None:
+        # observation slot present → single-turn multi-hop, OBSERVATION format
+        # no observation → multi-turn (next turn first function call), USER format
+        # tool_response content is always empty (aligned with training)
+        if has_prev_observation and has_obs_slot:
             # single-turn multi-hop：observationfunction_call，query
-            observation_content = f"<tool_response>\n{prev_obs if prev_obs else ''}\n</tool_response>"
+            observation_content = "<tool_response>\n</tool_response>"
             messages.append({"role": "user", "content": observation_content})
             # query，querychat_history
             return messages
@@ -787,10 +787,9 @@ def build_messages_for_answer(
                 call_count += 1
         
         elif conv["from"] == "observation":
-            # observation（observation），observation（observation）
+            # observation（内容强制置空，与训练对齐），不包括最后一个 observation
             if conv != last_observation:
-                obs_value = conv["value"]
-                history_parts.append(f"Tool response: {obs_value}" if obs_value else "Tool response: ")
+                history_parts.append("Tool response: ")
         
         elif conv["from"] == "gpt":
             # answer_idxanswer（LLM，）
@@ -818,12 +817,8 @@ def build_messages_for_answer(
     # ，observationformat_observation，：
     # <|im_start|>user\n<tool_response>\n{{content}}\n</tool_response><|im_end|>\n<|im_start|>assistant\n
     # ，vLLMchat_templaterole<|im_start|>user<|im_end|>\n<|im_start|>assistant\n
-    # <tool_response>
-    if last_observation:
-        obs_value = last_observation["value"]
-        observation_content = f"<tool_response>\n{obs_value if obs_value else ''}\n</tool_response>"
-    else:
-        observation_content = "<tool_response>\n</tool_response>"
+    # <tool_response> content always empty to match training
+    observation_content = "<tool_response>\n</tool_response>"
     
     # observationuser（format_observation）
     # ：observationroleOBSERVATION，format_observation<|im_start|>user
@@ -877,9 +872,8 @@ def build_chat_history_for_answer(
             pass
         
         elif conv["from"] == "observation":
-            # observation（observation）
-            obs_value = conv["value"]
-            history_parts.append(f"Tool response: {obs_value}" if obs_value else "Tool response: ")
+            # observation content always emptied to match training
+            history_parts.append("Tool response: ")
         
         elif conv["from"] == "gpt":
             # answer_idxanswer（LLM，）
